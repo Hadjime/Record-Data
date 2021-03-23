@@ -15,9 +15,9 @@
 		</Item>
 		<Item Name="main_Agilent.vi" Type="VI" URL="../main_Agilent.vi"/>
 		<Item Name="main_NI.vi" Type="VI" URL="../main_NI.vi"/>
-		<Item Name="testTrigMatrix.vi" Type="VI" URL="../testTrigMatrix.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="instr.lib" Type="Folder">
+				<Item Name="AG34980A Switch.vi" Type="VI" URL="/&lt;instrlib&gt;/ag34980a/ag34980A.llb/AG34980A Switch.vi"/>
 				<Item Name="IVI Constant to niDMM Aperture Time Units.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/IVI Constant to niDMM Aperture Time Units.vi"/>
 				<Item Name="niDMM ADC Calibration.ctl" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM ADC Calibration.ctl"/>
 				<Item Name="niDMM Aperture Time Units To IVI Constant.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Aperture Time Units To IVI Constant.vi"/>
@@ -36,6 +36,7 @@
 				<Item Name="niDMM Get Measurement Period.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Get Measurement Period.vi"/>
 				<Item Name="niDMM Initialize With Options.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Initialize With Options.vi"/>
 				<Item Name="niDMM Initialize.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Initialize.vi"/>
+				<Item Name="niDMM Is Over Range.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Is Over Range.vi"/>
 				<Item Name="niDMM IVI Error Converter.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM IVI Error Converter.vi"/>
 				<Item Name="niDMM Powerline Frequency To IVI Constant.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Powerline Frequency To IVI Constant.vi"/>
 				<Item Name="niDMM Powerline Frequency.ctl" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Powerline Frequency.ctl"/>
@@ -117,6 +118,7 @@
 				<Item Name="Write Spreadsheet String.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write Spreadsheet String.vi"/>
 			</Item>
 			<Item Name="4000 Compatible.vi" Type="VI" URL="../instr.lib/Temptronic TP04300/Public/Utility/4000 Compatible.vi"/>
+			<Item Name="????????? ? ????????? ???????????? 34980A.vi" Type="VI" URL="../VI/????????? ? ????????? ???????????? 34980A.vi"/>
 			<Item Name="Advapi32.dll" Type="Document" URL="Advapi32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -129,8 +131,6 @@
 			<Item Name="AG34980A Fetch.vi" Type="VI" URL="../instr.lib/ag34980a/ag34980A.llb/AG34980A Fetch.vi"/>
 			<Item Name="AG34980A Initialize.vi" Type="VI" URL="../instr.lib/ag34980a/ag34980A.llb/AG34980A Initialize.vi"/>
 			<Item Name="AG34980A Initiate.vi" Type="VI" URL="../instr.lib/ag34980a/ag34980A.llb/AG34980A Initiate.vi"/>
-			<Item Name="AG34980A List to Array.vi" Type="VI" URL="../instr.lib/ag34980a/ag34980A.llb/AG34980A List to Array.vi"/>
-			<Item Name="AG34980A Reading Count.vi" Type="VI" URL="../instr.lib/ag34980a/ag34980A.llb/AG34980A Reading Count.vi"/>
 			<Item Name="AG34980A Switch.vi" Type="VI" URL="../instr.lib/ag34980a/ag34980A.llb/AG34980A Switch.vi"/>
 			<Item Name="Agilent N6700 Series.lvlib" Type="Library" URL="../instr.lib/Agilent N6700 Series/Agilent N6700 Series.lvlib"/>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
@@ -562,6 +562,50 @@
 				<Property Name="TgtF_productName" Type="Str">Record Data_1.10</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{7FEDAAEE-8F22-4C36-BB06-7168FDC4E355}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">Record Data_1.11.exe</Property>
+				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
+			</Item>
+			<Item Name="Record Data_2.00" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{91EBE82F-E4EF-4EA3-A341-491CC7B9B8A9}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{5BC759D9-8CFC-40FA-95E2-B95E0100DC81}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{A8036B2E-2085-4148-84CF-8477705100C7}</Property>
+				<Property Name="Bld_buildSpecDescription" Type="Str">Переделана коммутация под более универсальное использование. Количество приборов выбирается в ручную от 1 до 16.</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Record Data_2.00</Property>
+				<Property Name="Bld_excludeDependentPPLs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/Record Data_2.00</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{4CE3AB7C-0906-439A-B16B-57E211A3B331}</Property>
+				<Property Name="Bld_version.build" Type="Int">6</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">Record Data_2.00.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/Record Data_2.00/Record Data_2.00.exe</Property>
+				<Property Name="Destination[0].path.type" Type="Str">relativeToProject</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/Record Data_2.00/data</Property>
+				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{C418B0AC-159B-47B4-9401-5A6CEC9895F7}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/main_NI.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="TgtF_companyName" Type="Str">no</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Record Data_1.10</Property>
+				<Property Name="TgtF_internalName" Type="Str">Record Data_1.10</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2017 no</Property>
+				<Property Name="TgtF_productName" Type="Str">Record Data_1.10</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{780A4F5D-3285-4E93-A37C-BC1054C54715}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">Record Data_2.00.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 		</Item>
